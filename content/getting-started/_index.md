@@ -1,24 +1,22 @@
 ---
 title: "Getting Started"
-date: 2020-02-06T15:26:15Z
-lastmod: 2020-02-06T15:26:15Z
-publishdate: 2020-02-06T15:26:15Z
+date: 2017-10-17T15:26:15Z
+lastmod: 2018-12-08T15:26:15Z
+publishdate: 2018-11-23T15:26:15Z
 draft: false
 weight: 9
 
-description: Getting started with goproject
+description: Text about this post
+images:
+- post-cover.png
 ---
 
 ## [Installation](./installation)
 
-Goproject is written in go and installation is as simple as downloading the binary from the [releases](https://github.com/jjunqueira/goproject/releases) page.
-See the full [installation](./installation) guide for a step by step guide.
+Download Hugo theme, configure, preview site ...
 
-## Configuration
+## [Configuration](./configuration)
 
-Goproject is still in its infancy fo there isn't much configuration you need to do other than initialize it for the first time.
-The initialization process is covered in the [installation](./installation) details.
+You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme's features.
 
-## Ascii Cinema Quickstart
-
-[![asciicast](https://asciinema.org/a/gAlEVPrKYT12FERhXpm9RKBah.svg)](https://asciinema.org/a/gAlEVPrKYT12FERhXpm9RKBah)
+## [Screenshot](./screenshot)

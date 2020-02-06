@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Goproject</title>
+    <link>https://jjunqueira.github.io/goproject-site/getting-started-2/</link>
+    <description>Recent content in Getting Started on Goproject</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Feb 2020 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://jjunqueira.github.io/goproject-site/getting-started-2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
