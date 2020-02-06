@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
+baseURL = "https://jjunqueira.github.io/goproject-site"
+publishDir = "docs"
 languageCode = "en-us"
 title = "Goproject"
 theme = "hugo-theme-techdoc"
