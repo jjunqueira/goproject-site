@@ -1,14 +1,12 @@
 ---
 title: "Getting Started"
-date: 2017-10-17T15:26:15Z
-lastmod: 2018-12-08T15:26:15Z
-publishdate: 2018-11-23T15:26:15Z
+date: 2020-02-06T15:26:15Z
+lastmod: 2020-02-06T15:26:15Z
+publishdate: 2020-02-06T15:26:15Z
 draft: false
 weight: 9
 
 description: Getting started with goproject
-images:
-- post-cover.png
 ---
 
 ## [Installation](./installation)
