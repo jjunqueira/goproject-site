@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic Template Walkthrough on Goproject</title>
+    <link>https://jjunqueira.github.io/goproject-site/walkthroughs/basic/</link>
+    <description>Recent content in Basic Template Walkthrough on Goproject</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Feb 2020 09:14:38 -0600</lastBuildDate>
+    
+	<atom:link href="https://jjunqueira.github.io/goproject-site/walkthroughs/basic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -13,10 +13,9 @@ images:
 
 ## [Installation](./installation)
 
-Download Hugo theme, configure, preview site ...
+Goproject is written in go and installation is as simple as downloading the binary from the [releases](https://github.com/jjunqueira/goproject/releases) page.
+See the full [installation](./installation) guide for a step by step guide.
 
 ## [Configuration](./configuration)
 
-You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme's features.
-
-## [Screenshot](./screenshot)
+The project is still in it's infancy so there isn't much to configure at the moment. The primary configuration a user would be interested in is custom templates.

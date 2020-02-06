@@ -34,3 +34,8 @@ enableMissingTranslationPlaceholders = false
     name = "Getting Started"
     url = "/getting-started"
     weight = 2
+
+[[menu.main]]
+    name = "Walkthroughs"
+    url = "/walkthroughs"
+    weight = 2

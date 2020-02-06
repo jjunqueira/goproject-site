@@ -17,34 +17,25 @@
 :root {}
 </style>
 <meta property="og:title" content="Installation" />
-<meta property="og:description" content="Download Hugo theme If you have git installed, you can do the following at the command-line-interface within the Hugo directory:
-cd themes git clone https://github.com/thingsym/hugo-theme-techdoc.git For more information read the Hugo documentation.
-Configure You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme&rsquo;s features.
-For an example of config.toml, see config.toml in exampleSite.
-See the Configuration documentation.
-Preview site To preview your site, run Hugo&rsquo;s built-in local server." />
+<meta property="og:description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jjunqueira.github.io/goproject-site/getting-started/installation/" />
 <meta property="article:published_time" content="2017-10-17T15:26:15+00:00" />
 <meta property="article:modified_time" content="2017-10-17T15:26:15+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
-<meta name="twitter:description" content="Download Hugo theme If you have git installed, you can do the following at the command-line-interface within the Hugo directory:
-cd themes git clone https://github.com/thingsym/hugo-theme-techdoc.git For more information read the Hugo documentation.
-Configure You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme&rsquo;s features.
-For an example of config.toml, see config.toml in exampleSite.
-See the Configuration documentation.
-Preview site To preview your site, run Hugo&rsquo;s built-in local server."/>
+<meta name="twitter:description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it."/>
 <meta itemprop="name" content="Installation">
-<meta itemprop="description" content="Download Hugo theme If you have git installed, you can do the following at the command-line-interface within the Hugo directory:
-cd themes git clone https://github.com/thingsym/hugo-theme-techdoc.git For more information read the Hugo documentation.
-Configure You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme&rsquo;s features.
-For an example of config.toml, see config.toml in exampleSite.
-See the Configuration documentation.
-Preview site To preview your site, run Hugo&rsquo;s built-in local server.">
+<meta itemprop="description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it.">
 <meta itemprop="datePublished" content="2017-10-17T15:26:15&#43;00:00" />
 <meta itemprop="dateModified" content="2017-10-17T15:26:15&#43;00:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="wordCount" content="87">
 
 
 
@@ -61,25 +52,23 @@ Preview site To preview your site, run Hugo&rsquo;s built-in local server.">
 <nav>
 <ul>
 <li><a href="/goproject-site/">Home</a></li>
-<li><a href="/goproject-site/getting-started">Getting Started</a></li></ul>
+<li><a href="/goproject-site/getting-started">Getting Started</a></li>
+<li><a href="/goproject-site/walkthroughs">Walkthroughs</a></li></ul>
 </nav>
 </div>
 <div class="content-container">
 <main><h1>Installation</h1>
-<h2 id="download-hugo-theme">Download Hugo theme</h2>
-<p>If you have git installed, you can do the following at the command-line-interface within the Hugo directory:</p>
-<pre><code>cd themes
-git clone https://github.com/thingsym/hugo-theme-techdoc.git
-</code></pre><p>For more information read <a href="https://gohugo.io/themes/installing-and-using-themes/">the Hugo documentation</a>.</p>
-<h2 id="configure">Configure</h2>
-<p>You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme&rsquo;s features.</p>
-<p>For an example of <code>config.toml</code>, see <a href="https://github.com/thingsym/hugo-theme-techdoc/blob/master/exampleSite/config.toml">config.toml</a> in exampleSite.</p>
-<p>See <a href="../configuration/">the Configuration documentation</a>.</p>
-<h2 id="preview-site">Preview site</h2>
-<p>To preview your site, run Hugo&rsquo;s built-in local server.</p>
-<pre><code>hugo server -t hugo-theme-techdoc
-</code></pre><p>Browse site on http://localhost:1313</p>
-<div class="edit-meta">
+<h2 id="download-goproject-binary">Download Goproject binary</h2>
+<p>You will  need to download the latest binary from github. This can be done from a web browswer or the command line with wget.</p>
+<pre><code>wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin
+</code></pre><h2 id="configure">Configure</h2>
+<p>In order to use the binary you must make it executable and then move it into a folder that is in your $PATH</p>
+<pre><code>chmod +x goproject-darwin
+cp goproject-darwin /usr/local/bin/goproject
+</code></pre><h2 id="first-time-use">First time use</h2>
+<p>Before you can use goproject you must initialize it. The initialization process will create the required directories and download the default project templates.</p>
+<pre><code>goproject init
+</code></pre><div class="edit-meta">
 Last updated on 17 Oct 2017
 
 
@@ -95,16 +84,22 @@ Published on 17 Oct 2017
 <ul>
 <li class=""><a href="https://jjunqueira.github.io/goproject-site">Home</a></li>
 
-<li class=""><a href="https://jjunqueira.github.io/goproject-site/getting-started-2/">Getting Started</a>
-  
-</li>
-
 <li class="parent"><a href="https://jjunqueira.github.io/goproject-site/getting-started/">Getting Started</a>
   
 <ul class="sub-menu">
 <li class="active"><a href="https://jjunqueira.github.io/goproject-site/getting-started/installation/">Installation</a></li>
 <li class=""><a href="https://jjunqueira.github.io/goproject-site/getting-started/configuration/">Configuration</a></li>
-<li class=""><a href="https://jjunqueira.github.io/goproject-site/getting-started/screenshot/">Screenshot</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://jjunqueira.github.io/goproject-site/walkthroughs/">Walkthroughs</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://jjunqueira.github.io/goproject-site/walkthroughs/basic/">Basic Template Walkthrough</a>
+  
+</li>
 </ul>
   
 </li>
