@@ -12,20 +12,6 @@
     
     
     <item>
-      <title>Installation</title>
-      <link>https://jjunqueira.github.io/goproject-site/getting-started/installation/</link>
-      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
-      
-      <guid>https://jjunqueira.github.io/goproject-site/getting-started/installation/</guid>
-      <description>Download Hugo theme If you have git installed, you can do the following at the command-line-interface within the Hugo directory:
-cd themes git clone https://github.com/thingsym/hugo-theme-techdoc.git For more information read the Hugo documentation.
-Configure You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme&amp;rsquo;s features.
-For an example of config.toml, see config.toml in exampleSite.
-See the Configuration documentation.
-Preview site To preview your site, run Hugo&amp;rsquo;s built-in local server.</description>
-    </item>
-    
-    <item>
       <title>Configuration</title>
       <link>https://jjunqueira.github.io/goproject-site/getting-started/configuration/</link>
       <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>

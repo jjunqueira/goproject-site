@@ -1,35 +1,31 @@
 ---
 title: "Installation"
-date: 2017-10-17T15:26:15Z
+date: 2020-02-06T15:26:15Z
 draft: false
 weight: 10
 ---
 
-## Download Hugo theme
+## Download Goproject binary
 
-If you have git installed, you can do the following at the command-line-interface within the Hugo directory:
+You will  need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
 
 ```
-cd themes
-git clone https://github.com/thingsym/hugo-theme-techdoc.git
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin
 ```
-
-For more information read [the Hugo documentation](https://gohugo.io/themes/installing-and-using-themes/).
 
 ## Configure
 
-You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme's features.
-
-For an example of `config.toml`, see [config.toml](https://github.com/thingsym/hugo-theme-techdoc/blob/master/exampleSite/config.toml) in exampleSite.
-
-See [the Configuration documentation](../configuration/).
-
-## Preview site
-
-To preview your site, run Hugo's built-in local server.
+In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
 
 ```
-hugo server -t hugo-theme-techdoc
+chmod +x goproject-darwin
+cp goproject-darwin /usr/local/bin/goproject
 ```
 
-Browse site on http://localhost:1313
+## First time use
+
+Before you can use goproject you must initialize it. The initialization process will create the required directories and download the default project templates.
+
+```
+goproject init
+```

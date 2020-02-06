@@ -14,7 +14,7 @@ description: Getting started with goproject
 Goproject is written in go and installation is as simple as downloading the binary from the [releases](https://github.com/jjunqueira/goproject/releases) page.
 See the full [installation](./installation) guide for a step by step guide.
 
-## [Configuration](./configuration)
+## Configuration
 
 Goproject is still in its infancy fo there isn't much configuration you need to do other than initialize it for the first time.
 The initialization process is covered in the [installation](./installation) details.
