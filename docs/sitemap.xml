@@ -3,7 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jjunqueira.github.io/goproject-site/getting-started/</loc>
+    <lastmod>2018-12-08T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jjunqueira.github.io/goproject-site/getting-started/installation/</loc>
+    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jjunqueira.github.io/goproject-site/getting-started/configuration/</loc>
+    <lastmod>2019-10-26T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jjunqueira.github.io/goproject-site/getting-started/screenshot/</loc>
+    <lastmod>2019-10-26T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jjunqueira.github.io/goproject-site/</loc>
+    <lastmod>2019-10-26T15:26:15+00:00</lastmod>
     <priority>0</priority>
   </url>
   
