@@ -18,7 +18,7 @@
 </style>
 <meta property="og:title" content="Installation" />
 <meta property="og:description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
-wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.2/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
 chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jjunqueira.github.io/goproject-site/getting-started/installation/" />
@@ -27,15 +27,15 @@ chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
 <meta name="twitter:description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
-wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.2/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
 chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it."/>
 <meta itemprop="name" content="Installation">
 <meta itemprop="description" content="Download Goproject binary You will need to download the latest binary from github. This can be done from a web browswer or the command line with wget.
-wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
+wget https://github.com/jjunqueira/goproject/releases/download/v0.0.2/goproject-darwin Configure In order to use the binary you must make it executable and then move it into a folder that is in your $PATH
 chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First time use Before you can use goproject you must initialize it.">
 <meta itemprop="datePublished" content="2017-10-17T15:26:15&#43;00:00" />
 <meta itemprop="dateModified" content="2017-10-17T15:26:15&#43;00:00" />
-<meta itemprop="wordCount" content="87">
+<meta itemprop="wordCount" content="134">
 
 
 
@@ -60,7 +60,7 @@ chmod &#43;x goproject-darwin cp goproject-darwin /usr/local/bin/goproject First
 <main><h1>Installation</h1>
 <h2 id="download-goproject-binary">Download Goproject binary</h2>
 <p>You will  need to download the latest binary from github. This can be done from a web browswer or the command line with wget.</p>
-<pre><code>wget https://github.com/jjunqueira/goproject/releases/download/v0.0.1/goproject-darwin
+<pre><code>wget https://github.com/jjunqueira/goproject/releases/download/v0.0.2/goproject-darwin
 </code></pre><h2 id="configure">Configure</h2>
 <p>In order to use the binary you must make it executable and then move it into a folder that is in your $PATH</p>
 <pre><code>chmod +x goproject-darwin
@@ -68,6 +68,10 @@ cp goproject-darwin /usr/local/bin/goproject
 </code></pre><h2 id="first-time-use">First time use</h2>
 <p>Before you can use goproject you must initialize it. The initialization process will create the required directories and download the default project templates.</p>
 <pre><code>goproject init
+</code></pre><h3 id="dependencies">Dependencies</h3>
+<p>Some of the templates use <a href="https://github.com/golangci/golangci-lint">golangci-lint</a>. This means that you should probably install it if you intend to use even just the Basic template. Installation is simple and documented <a href="https://github.com/golangci/golangci-lint#install">here</a>. For OSX users you can quickly install it via homebrew:</p>
+<pre><code>brew install golangci/tap/golangci-lint
+brew upgrade golangci/tap/golangci-lint
 </code></pre><div class="edit-meta">
 Last updated on 17 Oct 2017
 

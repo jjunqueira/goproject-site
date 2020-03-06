@@ -43,9 +43,135 @@
 </nav>
 </div>
 <div class="content-container">
-<main><h1>Basic Template Walkthrough</h1><h2 id="creating-a-new-project">Creating a new project</h2>
+<main><h1>Basic Template Walkthrough</h1><p>The Basic template serves as a starting point for any type of Go project. It will only include the initial project structure, a few helpers (logging, metrics), and a Makefile.</p>
+<p>All the steps in this walkthrough assume you have already completed <a href="../../getting-started/installation">installation</a>.</p>
+<p>For this walkthrough we will create a simple API with 1 endpoint. This will help you familiarize yourself with the process of creating a project and adding some code.</p>
+<h2 id="creating-a-new-project">Creating a new project</h2>
+<p>Before boostrapping a new project with goproject you should always update your templates. This can be done with the built in update command.</p>
+<pre><code>goproject update
+</code></pre><p>After updating your templates you are now ready to use the &lsquo;new&rsquo; command. The &lsquo;new&rsquo; command will help you create a fully functioning Go project based on a template. Let&rsquo;s try this out using the &lsquo;Basic&rsquo; template.</p>
+<pre><code>goproject new basic testproj
+</code></pre><p>Let&rsquo;s quickly walk through the parameters to make sure everything is clear:</p>
+<ol>
+<li>&lsquo;new&rsquo; - this tells goproject we are starting a new project</li>
+<li>&lsquo;basic&rsquo; - this tells goproject that we want to use the &lsquo;basic&rsquo; template</li>
+<li>&lsquo;testproj&rsquo; - this is the name of the project we are going to create</li>
+</ol>
+<p>Just to make sure the project built correctly we will go ahead and go into the project directory and attempt to build it.</p>
+<pre><code>cd testproj
+make
+</code></pre><p>If everything went well you shouldn&rsquo;t see any errors and you should now have a &lsquo;target&rsquo; directory containing a binary for your platform:</p>
+<pre><code>rm -rf /Users/jjunqueira/Downloads/testproj/target
+go mod tidy
+go: finding module for package github.com/prometheus/client_golang/prometheus
+go: finding module for package go.uber.org/zap
+go: finding module for package github.com/spf13/viper
+go: found github.com/spf13/viper in github.com/spf13/viper v1.6.2
+go: found go.uber.org/zap in go.uber.org/zap v1.14.0
+go: found github.com/prometheus/client_golang/prometheus in github.com/prometheus/client_golang v1.5.0
+go mod verify
+all modules verified
+find . -name \*.go -not -path vendor -not -path target -exec /Users/jjunqueira/go/bin/goimports -w {} \;
+golangci-lint run
+go test -v ./...
+?   	github.com/jjunqueira/testproj/cmd/testproj	[no test files]
+?   	github.com/jjunqueira/testproj/pkg/app	[no test files]
+?   	github.com/jjunqueira/testproj/pkg/config	[no test files]
+?   	github.com/jjunqueira/testproj/pkg/log	[no test files]
+?   	github.com/jjunqueira/testproj/pkg/metrics	[no test files]
+fatal: No names found, cannot describe anything.
+mkdir -p /Users/jjunqueira/Downloads/testproj/target
+for COMMAND in /Users/jjunqueira/Downloads/testproj/cmd/* ; do if [[ -z &quot;${GOOS}&quot; ]]; then GOOS=${OSTYPE}; fi; if [[ -d &quot;${COMMAND}&quot; ]]; then go build -trimpath -v -o &quot;/Users/jjunqueira/Downloads/testproj/target/bin/$(basename ${COMMAND})-${GOOS}&quot; -ldflags &quot;-w -s -X main.version= -X main.build=2020-03-06T14:40:27-0600&quot; &quot;${COMMAND}/...&quot;; fi done
+github.com/jjunqueira/testproj/pkg/config
+github.com/jjunqueira/testproj/pkg/log
+github.com/jjunqueira/testproj/pkg/app
+github.com/jjunqueira/testproj/cmd/testproj
+</code></pre><pre><code>└── target
+    └── bin
+        └── testproj-darwin18
+</code></pre><h3 id="hey-shouldnt-we-have-the-full-git-url-to-our-project">Hey shouldn&rsquo;t we have the full git url to our project?</h3>
+<p>If you are using git for your project and want the git url to be part of the module path then you can add an additional flag to the &lsquo;new&rsquo; command.</p>
+<pre><code>goproject new basic testproj --gitprefix &quot;github.com/jjunqueira&quot;
+</code></pre><h2 id="project-structure">Project Structure</h2>
+<p>Great! goproject did something! But what exactly does it give me? For the basic template goproject will provide you with the following folder layout:</p>
+<pre><code>├── Jenkinsfile
+├── Makefile
+├── README.md
+├── cmd
+│   └── testproj
+│       └── main.go
+├── deployments
+│   └── ansible
+│       ├── files
+│       │   ├── config.toml
+│       │   └── testproj.service
+│       ├── meta
+│       │   └── main.yml
+│       └── tasks
+│           └── main.yml
+├── go.mod
+└── pkg
+    ├── app
+    │   └── app.go
+    ├── config
+    │   └── viper.go
+    ├── log
+    │   └── zap.go
+    └── metrics
+        └── prometheus.go
+</code></pre><p>The project structure follows the fantastic <a href="https://github.com/golang-standards/project-layout">project-layout</a>. Full explanations of the folders and files can be viewed there but for completeness sake lets quickly go over them.</p>
+<ul>
+<li>Jenkinsfile - This provides a basic Jenkins build file that will work with this project</li>
+<li>Makefile - This is a complete makefile for doing various build tasks</li>
+<li>README.md - All good projects need a nice readme :)</li>
+<li>cmd - Your command directory, this is where the main entrypoint into your application lives.</li>
+<li>deployments - This is where your deployment scripts live. The basic template includes a full ansible deployment template.</li>
+<li>go.mod - All goproject templates should use go modules</li>
+<li>pkg - All of your supporting code
+<ul>
+<li>app - Application bootstrap and dependencies</li>
+<li>config - fully functional config struct which utilizes the <a href="https://github.com/spf13/viper">viper</a> library</li>
+<li>log - logger with some helper functions and default fields. It utilizes the <a href="https://github.com/uber-go/zap">zap</a> library.</li>
+<li>metrics - A basic example of a <a href="https://github.com/prometheus/client_golang">prometheus</a> metric.</li>
+</ul>
+</li>
+</ul>
 <h2 id="adding-configuration-parameters">Adding configuration parameters</h2>
-<h2 id="adding-a-metric">Adding a metric</h2>
+<p>Let&rsquo;s familiarize ourself with the configuration options. The Viper library supports marshalling a config file into a struct. For this example we will add a new struct that describes a couple HTTP server configuration variables, modify the default config.toml file, and verify that it is working.</p>
+<p>Modify pkg/config/viper.go to look like the following (we added the ServerSettings struct):</p>
+<pre><code>// AppConfig application configs
+type AppConfig struct {
+	Debug           bool           `mapstructure:&quot;debug&quot; json:&quot;debug&quot;`
+	Version         string         `mapstructure:&quot;version&quot; json:&quot;version&quot;`
+	Logging         LogSettings    `mapstructure:&quot;logging&quot; json:&quot;logging&quot;`
+	Server          ServerSettings `mapstructure:&quot;server&quot; json:&quot;server&quot;`
+}
+
+// ServerSettings settings for server
+type ServerSettings struct {
+	Bindport           int    `mapstructure:&quot;bindport&quot; json:&quot;bindport&quot;`
+	BindAddress        string `mapstructure:&quot;bind_address&quot; json:&quot;bind_address&quot;`
+	Metricsport        int    `mapstructure:&quot;metricsport&quot; json:&quot;metricsport&quot;`
+	MetricsBindAddress string `mapstructure:&quot;metrics_bind_address&quot; json:&quot;metrics_bind_address&quot;`
+}
+</code></pre><p>We can now modify the included base configuration file to add the new configuration parameters. Open up deployments/ansible/files/config.toml and add the following:</p>
+<pre><code>[server]
+bindport=8080
+bind_address=&quot;0.0.0.0&quot;
+metricsport=9090
+metrics_bind_address=&quot;0.0.0.0&quot;
+</code></pre><p>In order to make sure the changes worked we will compile the project again and run it. If everything worked we will see a log line with a message saying the application bootstrapped successfully.</p>
+<p>The default config template assumes you want to log to a file in /var/log. Since we are running locally we should modify the log configuration to just print to stdout. Your logging configuration should look like this:</p>
+<pre><code>[logging]
+level=&quot;debug&quot;
+encoding=&quot;json&quot;
+outputpaths=[&quot;stdout&quot;]
+</code></pre><p>Now we can try running the application:</p>
+<pre><code># make
+...lots of output
+# ./target/bin/testproj-darwin18 -config ./deployments/ansible/files 
+{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:1583527718.401667,&quot;caller&quot;:&quot;testproj/main.go:16&quot;,&quot;msg&quot;:&quot;Application bootstrap completed&quot;,&quot;app&quot;:&quot;testproj-darwin18&quot;,&quot;app_build&quot;:&quot;2020-03-06T14:48:11-0600&quot;,&quot;app_location&quot;:&quot;./target/bin/testproj-darwin18&quot;,&quot;app_version&quot;:&quot;&quot;,&quot;compiler&quot;:&quot;go1.14&quot;,&quot;pid&quot;:91812,&quot;server&quot;:&quot;JOSHUAs-MacBook-Pro-2.local&quot;,&quot;config&quot;:&quot;{false  {debug [stdout]} {8080 0.0.0.0 9090 0.0.0.0}}&quot;}
+</code></pre><h2 id="adding-a-metric">Adding a metric</h2>
 <h2 id="adding-some-code">Adding some code</h2>
 <h2 id="compiling">Compiling</h2>
 <h2 id="packaging-for-release">Packaging for release</h2>
