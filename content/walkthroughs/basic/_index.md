@@ -28,16 +28,19 @@ Let's quickly walk through the parameters to make sure everything is clear:
 2. 'basic' - this tells goproject that we want to use the 'basic' template
 3. 'testproj' - this is the name of the project we are going to create
 
+If you are using git for your project and want the git url to be part of the module path then you can add an additional flag to the 'new' command.
+
+```
+goproject new basic testproj --gitprefix "github.com/jjunqueira"
+```
+
+
 Just to make sure the project built correctly we will go ahead and go into the project directory and attempt to build it.
 
 ```
 cd testproj
 make
-```
-
-If everything went well you shouldn't see any errors and you should now have a 'target' directory containing a binary for your platform:
-
-```
+.... output ...
 rm -rf /Users/jjunqueira/Downloads/testproj/target
 go mod tidy
 go: finding module for package github.com/prometheus/client_golang/prometheus
@@ -63,19 +66,15 @@ github.com/jjunqueira/testproj/pkg/config
 github.com/jjunqueira/testproj/pkg/log
 github.com/jjunqueira/testproj/pkg/app
 github.com/jjunqueira/testproj/cmd/testproj
+... end output ...
 ```
+
+If everything went well you shouldn't see any errors and you should now have a 'target' directory containing a binary for your platform:
 
 ```
 └── target
     └── bin
         └── testproj-darwin18
-```
-
-### Hey shouldn't we have the full git url to our project?
-If you are using git for your project and want the git url to be part of the module path then you can add an additional flag to the 'new' command.
-
-```
-goproject new basic testproj --gitprefix "github.com/jjunqueira"
 ```
 
 ## Project Structure
