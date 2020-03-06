@@ -13,9 +13,9 @@ images:
 
 ## [Installation](./installation)
 
-Goproject is written in go and installation is as simple as downloading the binary from the [releases](https://github.com/jjunqueira/goproject/releases) page.
+Goproject is written in Go and installation is as simple as downloading the binary from the [releases](https://github.com/jjunqueira/goproject/releases) page.
 See the full [installation](./installation) guide for a step by step guide.
 
 ## [Configuration](./configuration)
 
-The project is still in it's infancy so there isn't much to configure at the moment. The primary configuration a user would be interested in is custom templates.
+The project is still in it's infancy so there isn't much to configure at the moment. The primary configuration a user would be interested in is a custom template.
